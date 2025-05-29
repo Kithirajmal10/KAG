@@ -1,9 +1,4 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* 
 
 .logo {
   height: 6em;
@@ -39,4 +34,37 @@
 
 .read-the-docs {
   color: #888;
+} */
+/* Simple CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+
+}
+html, body {
+  height: 100vh;
+
+  width: 100%;
+  font-family: sans-serif;
+}
+
+button, input, textarea, select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
