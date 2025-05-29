@@ -44,7 +44,7 @@ export default function ContactForm() {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-  const response = await fetch("https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbx-AzMi_wM5Gl3mGxwpGGKYf2yR4x3xus2Xzu1jpxkMb2tUjlgUJcleP7miGpAiYoZW/exec", {
+  const response = await fetch("https://script.google.com/macros/s/AKfycbydQwkEsZ0Q7e7CkImj5Qij9nBFQyujPSnNTHSTqhYgwlwGRNlKxb962KdDbbAim3jS/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
