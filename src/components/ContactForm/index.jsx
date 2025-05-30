@@ -61,21 +61,19 @@ const handleSubmit = async (e) => {
             <TextField name="Enter your full name" value={formData.fullName} onChange={(e) => handleChange('fullName', e.target.value)} />
             <TextField  type ='phone' length={10} name="Phone Number" value={formData.phone} onChange={(e) => handleChange('phone', e.target.value)} />
             <TextField  type ='phone' length={5} name="How many square feet" value={formData.sqft} onChange={(e) => handleChange('sqft', e.target.value)} />
-            <br/>
             <div className='form-group-radio'>
               <label>Are you Looking ? *</label>
               <div className="radio-group">
-                <label>
+                <label className='gap'>
                   <input type="radio" name="services" checked={formData.interested==='Floor Tiles'} value='Floor Tiles' onChange={handleRadioChange} required />
                    Floor Tiles
                 </label>
-                <label>
+                <label className ='gap'>
                   <input type="radio" name="services" checked={formData.interested==='Bathroom Tiles'} value='Bathroom Tiles' onChange={handleRadioChange} required />
                   Bathroom Tiles
                 </label>
               </div>
             </div>
-
             <TextField name="Location" value={formData.location} onChange={(e) => handleChange('location', e.target.value)} />
             <ButtonFiled name ="Submit" />
           </form>
