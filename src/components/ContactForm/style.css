@@ -2,13 +2,25 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: url('/hotel-background.jpg') no-repeat center center fixed;
+  background: url("../../assets/images/Background.jpeg") no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  overflow: hidden;
+}
+
+.bgimage {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .container {
@@ -19,10 +31,13 @@ body, html {
   max-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
-  /* margin: 20px; */
-  overflow: auto;
-  max-height: 100vh;
+  overflow-y: auto;
+  max-height: 90vh;
   scrollbar-width: none;
+}
+.gap{
+  display: flex;
+  gap: 8px;
 }
 
 .form-box {
@@ -48,30 +63,20 @@ form {
   display: flex;
   flex-direction: column;
   text-align: left;
+  gap: 16px;
 }
 
 label {
   font-weight: 500;
 }
-.form-group-radio{
-  /* text-align: center; */
+
+.form-group-radio {
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content:center ;
+  justify-content: center;
   padding-inline: 14px;
+  /* gap: 8px; */
 }
-
-/* input[type='text'],
-input[type='tel'],
-input[type='number'] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 14px;
-  font-size: 14px;
-  width: 100%;
-  box-sizing: border-box;
-} */
 
 .radio-group {
   display: flex;
@@ -81,7 +86,7 @@ input[type='number'] {
 }
 
 button {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 12px;
   border: none;
   background-color: #007bff;
@@ -95,21 +100,24 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-.bgimage
-{
-  background-image: url("../../assets/images/Background.jpeg");
-  width: 100%;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
 
-/* Responsive */
-@media (max-width: 480px) {
+/* Responsive for tablets and below */
+@media (max-width: 768px) {
   .container {
     padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  .radio-group {
+    gap: 10px;
+  }
+}
+
+/* Responsive for small phones */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+    max-height: 95vh;
   }
 
   .logo {
@@ -131,6 +139,5 @@ button:hover {
 
   .radio-group {
     flex-direction: column;
-    gap: 10px;
   }
 }
