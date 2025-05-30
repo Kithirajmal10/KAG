@@ -22,6 +22,7 @@ body, html {
   /* margin: 20px; */
   overflow: auto;
   max-height: 100vh;
+  scrollbar-width: none;
 }
 
 .form-box {
