@@ -7,7 +7,7 @@ export const TextField = ({ name, value, onChange, type = "text", length }) => {
   // Only allow digits if it's a phone input
   const handleKeyPress = (e) => {
     if(type === 'phone' ){
-      if ( !e.target.value ||/[0-9]/.test(e.target.value) && length >= e.target.value.length) {
+      if ( !e.target.value ||/^[0-9\b]+$/.test(e.target.value) && length >= e.target.value.length) {
         onChange(e)
       }
     }else{
