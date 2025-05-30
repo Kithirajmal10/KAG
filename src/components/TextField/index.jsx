@@ -1,13 +1,17 @@
 import React from 'react'
  import './style.css'
 
-export const TextField = ({ name, value, onChange, type = "text" }) => {
+export const TextField = ({ name, value, onChange, type = "text", length }) => {
   const id = name.replace(/\s+/g, '-').toLowerCase();
 
   // Only allow digits if it's a phone input
   const handleKeyPress = (e) => {
-    if (name.toLowerCase().includes('phone') && !/[0-9]/.test(e.key)) {
-      e.preventDefault();
+    if(type === 'phone' ){
+      if ( /[0-9]/.test(e.target.value) && length >= e.target.value.length) {
+        onChange(e)
+      }
+    }else{
+      onChange(e)
     }
   };
 
@@ -19,9 +23,7 @@ export const TextField = ({ name, value, onChange, type = "text" }) => {
         placeholder=" "
         required
         value={value}
-        onChange={onChange}
-        onKeyPress={handleKeyPress}
-        maxLength={10}
+        onChange={handleKeyPress}
       />
       <label htmlFor={id}>{name}*</label>
     </div>

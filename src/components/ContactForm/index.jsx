@@ -23,19 +23,6 @@ export default function ContactForm() {
     setFormData(prev => ({ ...prev, interested: e.target.value }));
   };
 
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-//   const response = await fetch("https://script.google.com/macros/s/AKfycbw-bZnemGYCJ4atBdflhp_kB7XGFAKKzCjnv3j4cAhe8aXPiygrned3NpzMgGohM4yU/exec", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify(formData)
-//   });
-
-//   const result = await response.json();
-//   console.log(result);
-// };
 const isValidPhoneNumber = (phone) => /^[0-9]{10}$/.test(phone);
 
 const handleSubmit = async (e) => {
@@ -72,8 +59,8 @@ const handleSubmit = async (e) => {
           <p>Please fill out the form below to get started</p>
           <form onSubmit={handleSubmit}>
             <TextField name="Enter your full name" value={formData.fullName} onChange={(e) => handleChange('fullName', e.target.value)} />
-            <TextField  type ='phone' name="Phone Number" value={formData.phone} onChange={(e) => handleChange('phone', e.target.value)} />
-            <TextField name="How many square feet" value={formData.sqft} onChange={(e) => handleChange('sqft', e.target.value)} />
+            <TextField  type ='phone' length={10} name="Phone Number" value={formData.phone} onChange={(e) => handleChange('phone', e.target.value)} />
+            <TextField  type ='phone' length={5} name="How many square feet" value={formData.sqft} onChange={(e) => handleChange('sqft', e.target.value)} />
             <br/>
             <div className='form-group-radio'>
               <label>Are you Looking ? *</label>
