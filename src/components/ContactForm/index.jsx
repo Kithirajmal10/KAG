@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './style.css';
 import { images } from '../../assets/images';
 import { TextField } from '../TextField';
+import { db } from '../../firebase';
+import { addDoc, collection } from 'firebase/firestore';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -20,42 +22,37 @@ export default function ContactForm() {
     setFormData(prev => ({ ...prev, interested: e.target.value }));
   };
 
-//  const handleSubmit = async (e) => {
+// const handleSubmit = async (e) => {
 //   e.preventDefault();
-//   try {
-//     const response = await fetch("https://script.google.com/macros/s/AKfycbx-AzMi_wM5Gl3mGxwpGGKYf2yR4x3xus2Xzu1jpxkMb2tUjlgUJcleP7miGpAiYoZW/exec", {
-//       method: "POST",
-//       body: JSON.stringify(formData),
-//       headers: { "Content-Type": "application/json" },
-//     });
+//   const response = await fetch("https://script.google.com/macros/s/AKfycbw-bZnemGYCJ4atBdflhp_kB7XGFAKKzCjnv3j4cAhe8aXPiygrned3NpzMgGohM4yU/exec", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(formData)
+//   });
 
-//     const result = await response.json();
-//     if (result.result === "success") {
-//       alert("Form submitted successfully!");
-//       setFormData({ fullName: '', phone: '', sqft: '', interested: '', location: '' });
-//     } else {
-//       alert("Submission failed. Please try again.");
-//     }
-//   } catch (error) {
-//     console.error("Error submitting form:", error);
-//     alert("An error occurred while submitting the form.");
-//   }
+//   const result = await response.json();
+//   console.log(result);
 // };
-
 const handleSubmit = async (e) => {
   e.preventDefault();
-  const response = await fetch("https://script.google.com/macros/s/AKfycbw-bZnemGYCJ4atBdflhp_kB7XGFAKKzCjnv3j4cAhe8aXPiygrned3NpzMgGohM4yU/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(formData)
-  });
 
-  const result = await response.json();
-  console.log(result);
+  try {
+    await addDoc(collection(db, "leads"), {
+      fullName: formData.fullName,
+      phone: formData.phone,
+      sqft: formData.sqft,
+      interested: formData.interested,
+      location: formData.location,
+      createdAt: new Date()
+    });
+
+    alert("Data saved successfully!");
+  } catch (error) {
+    console.error("Error adding document: ", error);
+  }
 };
-
 
   return (
     <div className='bgimage'>
