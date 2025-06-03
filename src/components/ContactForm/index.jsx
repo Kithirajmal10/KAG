@@ -14,6 +14,7 @@ export default function ContactForm() {
     interested: '',
     location: '',
   });
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -46,6 +47,10 @@ const handleSubmit = async (e) => {
       interested: '',
       location: '',
     });
+
+    setShowSuccess(true); // 👈 Show the popup/modal
+    // setTimeout(() => setShowSuccess(false), 3000); // Auto-close after 3 seconds (optional)
+
   } catch (error) {
     console.error("Error adding document: ", error);
   }
@@ -76,9 +81,20 @@ const handleSubmit = async (e) => {
             </div>
             <TextField name="Location" value={formData.location} onChange={(e) => handleChange('location', e.target.value)} />
             <ButtonFiled name ="Submit" />
+            {showSuccess && (
+         <div className="modal-overlay">
+          <div className="modal-content">
+          <h3>🎉 Thank You!</h3>
+          <p>Your details have been successfully submitted.</p>
+          <button onClick={() => setShowSuccess(false)}>Close</button>
+       </div>
+      </div>
+         )}
           </form>
         </div>
       </div>
+   
     </div>
+    
   );
 }

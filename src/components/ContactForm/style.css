@@ -2,25 +2,29 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: url("../../assets/images/Background.jpeg") no-repeat center center fixed;
-  background-size: cover;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  scrollbar-width: none;
 }
 
 .bgimage {
   width: 100%;
-  height: 100%;
+  height: auto;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: url("../../assets/images/Background.jpeg") no-repeat center center fixed;
+  background-size: cover;
+
+
 }
 
 .container {
@@ -101,6 +105,59 @@ button:hover {
   background-color: #0056b3;
 }
 
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: fadeInScale 0.3s ease-in-out;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* Responsive for tablets and below */
 @media (max-width: 768px) {
   .container {
@@ -112,6 +169,8 @@ button:hover {
     gap: 10px;
   }
 }
+
+
 
 /* Responsive for small phones */
 @media (max-width: 480px) {
