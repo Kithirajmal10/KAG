@@ -1,0 +1,108 @@
+/* .bg-image
+{
+    width: 100%;
+    height: 80vh;
+}
+.lefthalf
+{
+    width: 100%;
+    background-color: chartreuse;
+}
+.righthalf{
+    width: 100%;
+    background-color: white;
+}
+.Center{
+    padding-top: 10%;
+    display: flex;
+}
+.first{
+    align-self: self-end;
+} */
+ .explore-section {
+  display: flex;
+  background-color: #002f47;
+  color: white;
+  padding: 50px;
+  gap: 40px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.explore-left {
+  flex: 1;
+}
+
+.explore-left h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.title-left {
+  font-family: 'Georgia', serif;
+  font-weight: 400;
+  font-size: 48px;
+}
+
+.title-right {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: #c4721e;
+  margin-left: 10px;
+}
+
+.explore-left p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.explore-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+  display: inline-block;
+}
+
+.explore-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.tile-card {
+  position: relative;
+  border: 1px solid white;
+  background-color: #003b5c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 20px;
+}
+
+.tile-card.image {
+  background-image: url('https://yourdomain.com/kitchen.jpg');
+  background-size: cover;
+  background-position: center;
+  grid-row: 1 / span 2;
+}
+
+.tile-card.outdoor {
+  background-color: #003b5c;
+}
+
+.tile-content h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tile-content a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}

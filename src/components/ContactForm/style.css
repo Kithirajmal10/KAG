@@ -31,13 +31,11 @@ body, html {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 20px 30px;
   border-radius: 10px;
-  /* height: 100vh; */
   width: 100%;
   max-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   overflow-y: auto;
-  /* max-height: 90vh; */
   scrollbar-width: none;
 }
 .gap{
