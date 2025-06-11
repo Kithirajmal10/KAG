@@ -1,0 +1,100 @@
+.floor-tiles-section {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 60px 40px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+}
+
+.floor-tiles-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  flex: 1.2;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.tile-card {
+  position: relative;
+  min-width: 200px;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+
+.tile-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.bordered {
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bordered h3 {
+  margin: 0;
+  color: white;
+  font-size: 18px;
+}
+
+.bordered a {
+  margin-top: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.floor-tiles-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.floor-tiles-text h2 {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.floor-tiles-text h2 .highlighted {
+  font-family: 'Georgia', serif;
+  color: #b4641d;
+  font-weight: 700;
+  font-size: 36px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.floor-tiles-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222;
+}
+
+.explore-link {
+  display: inline-block;
+  margin-top: 20px; 
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
