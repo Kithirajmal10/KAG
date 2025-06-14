@@ -1,76 +1,55 @@
-/* .bg-image
-{
-    width: 100%;
-    height: 80vh;
-}
-.lefthalf
-{
-    width: 100%;
-    background-color: chartreuse;
-}
-.righthalf{
-    width: 100%;
-    background-color: white;
-}
-.Center{
-    padding-top: 10%;
-    display: flex;
-}
-.first{
-    align-self: self-end;
-} */
- .explore-section {
+.explore-section {
   display: flex;
   background-color: #002f47;
   color: white;
-  padding: 50px;
-  gap: 40px;
+  padding: 5vw 4vw;
+  gap: 3vw;
   font-family: 'Segoe UI', sans-serif;
+  min-height: 70vh;
+  flex-direction: row;
+}
+
+.content {
+  color: white;
+  text-align: justify;
 }
 
 .explore-left {
   flex: 1;
+  padding-right: 2vw;
 }
 
 .explore-left h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
 .title-left {
   font-family: 'Georgia', serif;
   font-weight: 400;
-  font-size: 48px;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
 }
 
 .title-right {
   font-family: 'Georgia', serif;
   font-weight: bold;
   color: #c4721e;
-  margin-left: 10px;
+  margin-left: 0.5rem;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
 }
 
 .explore-left p {
-  font-size: 16px;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.explore-link {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 2px;
-  display: inline-block;
+  margin-bottom: 1.5rem;
 }
 
 .explore-right {
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
+  gap: 1.5vw;
 }
 
 .tile-card {
@@ -81,28 +60,74 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
-  padding: 20px;
-}
-
-.tile-card.image {
-  background-image: url('https://yourdomain.com/kitchen.jpg');
-  background-size: cover;
-  background-position: center;
-  grid-row: 1 / span 2;
-}
-
-.tile-card.outdoor {
-  background-color: #003b5c;
+  min-height: 12rem;
+  padding: 1.5vw;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  text-align: center;
 }
 
 .tile-content h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin-bottom: 0.8rem;
 }
 
-.tile-content a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
+.tile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+
+/* Tablets and smaller */
+@media (max-width: 768px) {
+  .explore-section {
+    flex-direction: column;
+    padding: 8vw 5vw;
+    gap: 2rem;
+  }
+
+  .explore-left {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .explore-right {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tile-card {
+    min-height: 15rem;
+  }
+
+  .tile-image {
+    height: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .explore-section {
+    padding: 10vw 6vw;
+  }
+
+  .title-left,
+  .title-right {
+    font-size: clamp(1.2rem, 6vw, 1.6rem);
+    display: block;
+    margin-left: 0;
+  }
+
+  .tile-card {
+    min-height: 10rem;
+    padding: 2vw;
+  }
+
+  .tile-content h3 {
+    font-size: clamp(0.9rem, 4vw, 1rem);
+  }
 }
