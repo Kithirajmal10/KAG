@@ -1,44 +1,43 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  height: auto;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
   scrollbar-width: none;
 }
 
 .bgimage {
   width: 100%;
-  height: 100vh;
-  background-size: cover;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
-  display: flex;
   flex-direction: column;
   background: url("../../assets/images/Background.jpeg") no-repeat center center fixed;
   background-size: cover;
-
-
 }
 
 .container {
   background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px 30px;
+  padding: 30px 40px;
   border-radius: 10px;
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   overflow-y: auto;
   scrollbar-width: none;
 }
-.gap{
+
+.gap {
   display: flex;
   gap: 8px;
 }
@@ -54,12 +53,14 @@ body, html {
 
 h2 {
   margin: 10px 0;
+  font-size: 24px;
 }
 
 p {
   color: #666;
   font-size: 14px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 form {
@@ -78,7 +79,6 @@ label {
   flex-direction: column;
   justify-content: center;
   padding-inline: 14px;
-  /* gap: 8px; */
 }
 
 .radio-group {
@@ -104,7 +104,7 @@ button:hover {
   background-color: #0056b3;
 }
 
-
+/* Modal Styles */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -124,7 +124,7 @@ button:hover {
   border-radius: 12px;
   text-align: center;
   max-width: 400px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   animation: fadeInScale 0.3s ease-in-out;
 }
 
@@ -157,21 +157,27 @@ button:hover {
   }
 }
 
-/* Responsive for tablets and below */
+/* Tablets and below */
 @media (max-width: 768px) {
   .container {
     padding: 30px 20px;
-    max-width: 60%;
+    max-width: 90%;
   }
 
   .radio-group {
     gap: 10px;
   }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 13px;
+  }
 }
 
-
-
-/* Responsive for small phones */
+/* Small phones */
 @media (max-width: 480px) {
   .container {
     padding: 20px 15px;
@@ -183,11 +189,11 @@ button:hover {
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   p {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   input,
@@ -197,5 +203,6 @@ button:hover {
 
   .radio-group {
     flex-direction: column;
+    gap: 8px;
   }
 }

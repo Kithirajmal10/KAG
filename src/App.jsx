@@ -15,8 +15,8 @@ function App() {
     <>
     <ContactForm/>
     {/* <CenterData/> */}
-    <CalculationData/>
     <ContentData/>
+    <CalculationData/>
     </>
   )
 }
